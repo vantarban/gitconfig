@@ -1,0 +1,64 @@
+[user]
+	name = VANDERLEI TARTARINI BANIN
+	email = vanderlei.tb@gmail.com
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    st = status
+    ci = commit
+    br = branch -a
+    co = checkout
+    lg = log -p
+    update = !sh -c \"git fetch -p && git rebase origin/$(git symbolic-ref HEAD | sed -e 's,.*/\\(.*\\),\\1,')\"
+    up = !sh -c \"git fetch -p && git rebase origin/$(git symbolic-ref HEAD | sed -e 's,.*/\\(.*/\\),\\1,')\"
+    ft = fetch -p
+
+[push]
+    default = current
+
+[pull]
+    default = current
+
+[merge]
+    tool = meld
+    commit = no
+    ff = no
+
+[url "http://"]
+    insteadOf = git://
+
+[pull]
+    ff = yes
+	
+[diff]
+    tool = meld
+	
+[difftool]
+    prompt = false
+	
+[difftool "meld"]
+    path = C:\\Program Files (x86)\\Meld\\meld\\meld.exe
+
+[mergetool "meld"]
+    path = C:\\Program Files (x86)\\Meld\\meld\\meld.exe
+[core]
+	autocrlf = false
+	eol = lf
